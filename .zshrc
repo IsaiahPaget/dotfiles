@@ -101,4 +101,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dotfiles='git@github.com:IsaiahPaget/dotfiles.git'
 alias config='/usr/bin/git --git-dir=/home/isaiahpaget/dotfiles/ --work-tree=/home/isaiahpaget'
