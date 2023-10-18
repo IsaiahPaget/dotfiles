@@ -275,7 +275,8 @@ vim.o.mouse = 'a'
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
-
+-- enable cursorLine
+vim.o.cursorline = true
 -- Enable break indent
 vim.o.breakindent = true
 
