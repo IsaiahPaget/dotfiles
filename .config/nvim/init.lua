@@ -163,17 +163,8 @@ require('lazy').setup({
       vim.cmd.colorscheme 'onedark'
     end,
   },
-  
   --Auto Save
-  ["Pocco81/auto-save.nvim"] ={
-    config = function()
-         require("auto-save").setup {
-            -- your config goes here
-            -- or just leave it empty :)
-         }
-    end,
-  },
-
+  "Pocco81/auto-save.nvim",
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
