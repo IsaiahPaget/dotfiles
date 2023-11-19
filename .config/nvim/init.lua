@@ -142,8 +142,7 @@ require('lazy').setup({
       end,
     },
   },
-
-  {
+{
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
@@ -155,7 +154,7 @@ require('lazy').setup({
         code_style = {
           comments = 'italic',
           keywords = 'none',
-          functions = 'none',
+          functions = 'bold',
           strings = 'none',
           variables = 'none'
     },
@@ -180,14 +179,10 @@ require('lazy').setup({
   },
 
   {
-    -- Add indentation guides even on blank lines
+   -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
   },
 
   -- "gc" to comment visual regions/lines
@@ -212,6 +207,9 @@ require('lazy').setup({
         end,
       },
     },
+  },
+  {
+    'mfussenegger/nvim-jdtls',
   },
 
   {
@@ -255,6 +253,18 @@ require('lazy').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = false
+
+-- Custom key maps
+vim.keymap.set('n', '<C-d>', 'zz<C-d>')
+vim.keymap.set('n', '<C-u>', 'zz<C-u>')
+vim.keymap.set('v', 'J', ":m'>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m'<-2<CR>gv=gv")
+vim.keymap.set("x", "<leader>p", "\"_dP")
+-- Custom settings
+vim.opt.smartindent = true
+vim.opt.wrap = false
+vim.opt.scrolloff = 8
+vim.opt.updatetime = 50
 
 -- Make line numbers default
 vim.wo.number = true

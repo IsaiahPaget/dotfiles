@@ -1,0 +1,15 @@
+live_config_reload = true
+
+# window stuff
+window.opacity = 0.95
+window.blur = true
+window.title = "Terminal"
+
+# fonts
+font.normal = {family = "JetBrainsMono Nerd Font", style="normal"}
+font.bold = {family = "JetBrainsMono Nerd Font", style="bold"}
+font.italic = {family = "JetBrainsMono Nerd Font", style="italic"}
+font.bold_italic = {family = "JetBrainsMono Nerd Font", style="bold italic"}
+font.size = 12
+
+
