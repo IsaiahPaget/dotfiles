@@ -1,0 +1,35 @@
+local plugins = {
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require "plugins.configs.lspconfig"
+            require "custom.configs.lspconfig"
+        end,
+    },
+    {
+        "williamboman/mason.nvim",
+        opts = {
+            ensure_installed = {
+                "typescript-language-server"
+            }
+        }
+    },
+    {
+        "mbbill/undotree",
+        lazy = false,
+        init = function()
+            require "custom.init"
+        end
+    },
+    {
+        -- auto save
+        "Pocco81/auto-save.nvim",
+        lazy = false,
+    },
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false,
+    }
+}
+
+return plugins
