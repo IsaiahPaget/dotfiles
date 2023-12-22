@@ -1,0 +1,12 @@
+# GIMP action-history
+
+(history-item "file-open" 1)
+(history-item "file-quit" 1)
+(history-item "filters-brightness-contrast" 0)
+(history-item "file-overwrite" 1)
+(history-item "filters-saturation" 0)
+(history-item "tools-gradient" 0)
+(history-item "image-scale" 0)
+(history-item "file-save-as" 1)
+
+# end of action-history
