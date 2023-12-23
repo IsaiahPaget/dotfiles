@@ -139,6 +139,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 exec_always compton -b --config $HOME/.config/picom/picom.conf
 exec_always feh --bg-fill Pictures/walls/plant_foliage.jpg
 exec_always $HOME/.config/polybar/launch.sh --vallen &
+exec_always redshift
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
