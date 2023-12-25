@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = 'gruvchad',
+  theme = 'everblush',
   tabufline = {
     show_numbers = false,
     enabled = false,
