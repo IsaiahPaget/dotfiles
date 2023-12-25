@@ -171,8 +171,8 @@ gaps outer 2
 
 # class                 border  bground text    indicator child_border
 client.focused          #873974 #384741 #888888 #873974   #873974 
-client.focused_inactive #4C4C4C #222222 #888888 #292D2E   #222222
-client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
+client.focused_inactive #384741 #222222 #888888 #384741   #384741 
+client.unfocused        #384741 #222222 #888888 #384741   #384741 
 client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
