@@ -90,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+export TERM=alacritty
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -102,3 +103,23 @@ source $ZSH/oh-my-zsh.sh
 #
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim=nvim
+alias code="flatpak run com.visualstudio.code"
+alias la="ls -A"
+alias android-studio='$HOME/.local/etc/android-studio/bin/studio.sh'
+export PATH="/home/ipaget/.local/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ipaget/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ipaget/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ipaget/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ipaget/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

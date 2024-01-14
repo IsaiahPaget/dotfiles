@@ -2,18 +2,18 @@
 local M = {}
 
 M.ui = {
-    theme = 'rosepine',
-    hl_override = {
-        Normal = {
-            bg = "NONE"
-        }
+    theme = 'gruvbox',
+    -- hl_override = {
+    --     Normal = {
+    --         bg = "NONE"
+    --     },
+    -- },
+    tabufline = {
+        show_numbers = false,
+        enabled = false,
+        lazyload = true,
+        overriden_modules = nil,
     },
-        tabufline = {
-            show_numbers = false,
-            enabled = false,
-            lazyload = true,
-            overriden_modules = nil,
-        },
 }
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"

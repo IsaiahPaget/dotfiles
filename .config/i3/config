@@ -90,7 +90,7 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-bindsym $mod+d exec rofi -show drun -theme $ROFI_THEMES/config.rasi
+bindsym $mod+d exec rofi -show drun -modi drun -show-icons -theme $ROFI_THEMES/config.rasi
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -108,11 +108,11 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
+bindsym $mod+y workspace number $ws1
+bindsym $mod+u workspace number $ws2
+bindsym $mod+i workspace number $ws3
+bindsym $mod+o workspace number $ws4
+bindsym $mod+p workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
@@ -120,11 +120,11 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+y move container to workspace number $ws1
+bindsym $mod+Shift+u move container to workspace number $ws2
+bindsym $mod+Shift+i move container to workspace number $ws3
+bindsym $mod+Shift+o move container to workspace number $ws4
+bindsym $mod+Shift+p move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
@@ -140,7 +140,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 ## AUTO START ##
 exec_always compton -b --config $HOME/.config/picom/picom.conf
-exec_always feh --bg-fill Pictures/walls/plant_foliage.jpg
+exec_always --no-startup-id feh --bg-fill Pictures/walls/plant_foliage.jpg
 exec_always $HOME/.config/polybar/launch.sh --vallen &
 exec_always redshift
 exec_always $HOME/.config/i3/layout.sh
@@ -153,10 +153,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -166,7 +166,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 8
+gaps inner 10
 gaps outer 2
 
 # class                 border  bground text    indicator child_border
