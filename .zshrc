@@ -105,7 +105,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim=nvim
 alias code="flatpak run com.visualstudio.code"
 alias la="ls -A"
-alias android-studio='$HOME/.local/etc/android-studio/bin/studio.sh'
+alias lf="$HOME/go/bin/lf"
 export PATH="/home/ipaget/.local/bin:$PATH"
 
 # >>> conda initialize >>>
@@ -123,3 +123,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# USE LF TO SWITCH DIRECTORIES AND BIND IT TO CTRL-O
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
