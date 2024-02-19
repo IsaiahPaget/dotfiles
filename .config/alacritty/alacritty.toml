@@ -1,0 +1,78 @@
+[env]
+# TERM variable
+# This value is used to set the `$TERM` environment variable for
+# each instance of Alacritty. If it is not present, alacritty will
+# check the local terminfo database and use `alacritty` if it is
+# available, otherwise `xterm-256color` is used.
+TERM = "alacritty"
+
+[window]
+# Window padding (changes require restart)
+# Blank space added around the window in pixels. This padding is scaled
+# by DPI and the specified value is always added at both opposing sides.
+padding = { x =  0, y =  0 }
+
+# Window decorations
+# Values for `decorations`:
+#     - full: Borders and title bar
+#     - none: Neither borders nor title bar
+# Values for `decorations` (macOS only):
+#     - transparent: Title bar, transparent background and title bar buttons
+#     - buttonless: Title bar, transparent background and no title bar buttons
+# decorations = "full"
+
+# Background opacity
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+# opacity =  0.8
+
+# Startup Mode (changes require restart)
+# Values for `startup_mode`:
+#   - Windowed
+#   - Maximized
+#   - Fullscreen
+# Values for `startup_mode` (macOS only):
+#   - SimpleFullscreen
+# startup_mode = "Windowed"
+
+# Allow terminal applications to change Alacritty's window title.
+# dynamic_title = true
+
+# Decorations theme variant
+# Override the variant of the System theme/GTK theme/Wayland client side
+# decorations. Commonly supported values are `Dark`, `Light`, and `None` for
+# auto pick-up. Set this to `None` to use the default theme variant.
+# decorations_theme_variant = "None"
+
+# Resize increments
+# Prefer resizing window by discrete steps equal to cell dimensions.
+# resize_increments = false
+
+# Make `Option` key behave as `Alt` (macOS only):
+#   - OnlyLeft
+#   - OnlyRight
+#   - Both
+#   - None (default)
+# option_as_alt = "None"
+
+# Font configuration
+[font]
+# Normal (roman) font face
+normal = { family = "JetbrainsMono Nerd Font", style = "Regular" }
+
+# Bold font face
+bold = { family = "JetbrainsMono Nerd Font", style = "Bold" }
+
+# Italic font face
+italic = { family = "JetbrainsMono Nerd Font", style = "Italic" }
+
+# Bold italic font face
+bold_italic = { family = "JetbrainsMono Nerd Font", style = "Bold Italic" }
+
+# Point size
+size =  12.0
+
+# Colors (Tomorrow Night)
+[colors]
+# Default colors
+primary = { background = "#32302f", foreground = "#888888" }

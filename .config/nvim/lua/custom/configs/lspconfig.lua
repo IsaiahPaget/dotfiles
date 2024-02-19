@@ -19,3 +19,14 @@ lspconfig.pyright.setup({
     capabilities = capabilities,
     filetypes = {"python"},
 })
+
+lspconfig.gdscript.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
+        }
+    },
+    filetypes = { "gd", "gdscript", "gdscript3"},
+})
