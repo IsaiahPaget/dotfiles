@@ -15,8 +15,8 @@ M.general = {
         ["<leader>Y"] = { "\"+Y", "Yanks into systems clipboard"},
     },
     v = {
-        ["K"] = { ":m '>+1<CR>gv=gv", "Move highlighted text down"},
-        ["L"] = { ":m '<-2<CR>gv=gv", "Move highlighted text up"},
+        ["J"] = { ":m '>+1<CR>gv=gv", "Move highlighted text down"},
+        ["K"] = { ":m '<-2<CR>gv=gv", "Move highlighted text up"},
         ["<leader>y"] = { "\"+y", "Yanks into systems clipboard"},
     },
     x = {
