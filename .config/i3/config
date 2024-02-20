@@ -166,8 +166,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 10
-gaps outer 2
+gaps inner 6
+# gaps outer 1
 
 # class                 border  bground text    indicator child_border
 client.focused          #873974 #384741 #888888 #873974   #873974 
