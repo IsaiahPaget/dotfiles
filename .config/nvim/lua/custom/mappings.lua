@@ -21,6 +21,8 @@ M.general = {
     },
     x = {
         ["<leader>p"] = { "\"_dP", "pastes without loosing what you pasted in buffer"}
+    },
+    i = {
     }
 }
 

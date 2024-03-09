@@ -140,7 +140,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 ## AUTO START ##
 exec_always compton -b --config $HOME/.config/picom/picom.conf
-exec_always --no-startup-id feh --bg-fill Pictures/walls/plant_foliage.jpg
+exec_always --no-startup-id feh --no-xinera --bg-fill Pictures/walls/trees_unsplashed.jpg
 exec_always $HOME/.config/polybar/launch.sh --vallen &
 exec_always redshift
 exec_always $HOME/.config/i3/layout.sh

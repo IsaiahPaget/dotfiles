@@ -1,5 +1,4 @@
 vim.opt.colorcolumn = "80"
-
 vim.g.undotree_WindowLayout = 2
 
 vim.opt.nu = true
@@ -11,7 +10,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-vim.opt.wrap = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true

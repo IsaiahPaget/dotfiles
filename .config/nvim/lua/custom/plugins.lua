@@ -16,6 +16,12 @@ local plugins = {
         }
     },
     {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        lazy = false,
+        opts = { signs = false }
+    },
+    {
         "mbbill/undotree",
         lazy = false,
         init = function()
@@ -30,7 +36,7 @@ local plugins = {
     {
         "christoomey/vim-tmux-navigator",
         lazy = false,
-    }
+    },
 }
 
 return plugins
