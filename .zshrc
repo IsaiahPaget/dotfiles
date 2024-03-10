@@ -106,6 +106,7 @@ alias vim=nvim
 alias code="flatpak run com.visualstudio.code"
 alias la="ls -A"
 alias lf="$HOME/go/bin/lf"
+alias mv="mv -i"
 export PATH="/home/ipaget/.local/bin:$PATH"
 
 # >>> conda initialize >>>
