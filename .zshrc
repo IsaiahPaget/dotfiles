@@ -107,6 +107,7 @@ alias code="flatpak run com.visualstudio.code"
 alias la="ls -A"
 alias lf="$HOME/go/bin/lf"
 alias mv="mv -i"
+alias gitl="git log --all --graph --decorate"
 export PATH="/home/ipaget/.local/bin:$PATH"
 
 # >>> conda initialize >>>
