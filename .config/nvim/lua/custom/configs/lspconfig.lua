@@ -23,10 +23,8 @@ lspconfig.pyright.setup({
 lspconfig.gdscript.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    init_options = {
-        preferences = {
-            disableSuggestions = true,
-        }
+    flags = {
+        debounce_text_changes = 150,
     },
     filetypes = { "gd", "gdscript", "gdscript3"},
 })
