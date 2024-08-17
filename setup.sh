@@ -47,7 +47,27 @@ LoadConfigs() {
 	if [ "$CONT" = "y" ]; then
 		stow kitty
 	fi
+	echo "${CYAN}### Load I3 Config ###${NC}"
+	read -p "Confirm (y/n)?" CONT
+	if [ "$CONT" = "y" ]; then
+		stow i3
+	fi
 
+	echo "${CYAN}### Load Polybar Config ###${NC}"
+	read -p "Confirm (y/n)?" CONT
+	if [ "$CONT" = "y" ]; then
+		stow polybar
+	fi
+	echo "${CYAN}### Load Picom Config ###${NC}"
+	read -p "Confirm (y/n)?" CONT
+	if [ "$CONT" = "y" ]; then
+		stow picom
+	fi
+	echo "${CYAN}### Load Rofi Config ###${NC}"
+	read -p "Confirm (y/n)?" CONT
+	if [ "$CONT" = "y" ]; then
+		stow rofi
+	fi
 }
 if ! [ -x "$(command -v stow)" ]; then
 	echo "${CYAN}### Installing Stow ###${NC}"
@@ -117,6 +137,44 @@ if ! [ -x "$(command -v gh)" ]; then
 	sudo apt-get install gh
 	if ! [ -x "$(command -v gh)" ]; then
 		echo "${RED}### Could not install Github CLI ###${NC}"
+	fi
+fi
+if ! [ -x "$(command -v feh)" ]; then
+	echo "${CYAN}### Installing Feh ###${NC}"
+	if ! [ -d "$HOME/Pictures/Wallpapers" ]; then
+		mkdir -p ~/Pictures/Wallpapers
+	fi
+	sudo apt-get install feh
+	if ! [ -x "$(command -v feh)" ]; then
+		echo "${RED}### Could not install Feh ###${NC}"
+	fi
+fi
+if ! [ -x "$(command -v rofi)" ]; then
+	echo "${CYAN}### Installing Rofi ###${NC}"
+	sudo apt-get install rofi
+	if ! [ -x "$(command -v rofi)" ]; then
+		echo "${RED}### Could not install Rofi ###${NC}"
+	fi
+fi
+
+if ! [ -x "$(command -v node)" ]; then
+	echo "${CYAN}### Installing Node ###${NC}"
+	HasCurl
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+	nvm install node
+fi
+if ! [ -x "$(command -v picom)" ]; then
+	echo "${CYAN}### Installing Picom ###${NC}"
+	sudo apt-get install picom
+	if ! [ -x "$(command -v picom)" ]; then
+		echo "${RED}### Could not install Picom ###${NC}"
+	fi
+fi
+if ! [ -x "$(command -v polybar)" ]; then
+	echo "${CYAN}### Installing Polybar ###${NC}"
+	sudo apt-get install polybar
+	if ! [ -x "$(command -v polybar)" ]; then
+		echo "${RED}### Could not install Polybar ###${NC}"
 	fi
 fi
 if ! [ -d "$HOME/.local/kitty.app" ]; then
