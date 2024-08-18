@@ -3,10 +3,14 @@ RED="\033[1;31m"
 CYAN="\033[1;36m"
 YELLOW="\033[1;33m"
 NC="\033[0m"
-echo "${CYAN}###Starting###${NC}"
+echo "${CYAN}### Starting ###${NC}"
 
-sudo apt-get update
-sudo apt-get upgrade
+echo "${CYAN}### Do you want to update? ###${NC}"
+read -p "Confirm (y/n)?" CONT
+if [ "$CONT" = "y" ]; then
+	sudo apt-get update
+	sudo apt-get upgrade
+fi
 
 HasCurl() {
 	if ! [ -x "$(command -v curl)" ]; then
@@ -27,6 +31,19 @@ HasStow() {
 	fi
 }
 LoadConfigs() {
+	echo "${CYAN}### Load everything? ###${NC}"
+	read -p "Confirm (y/n)?" CONT
+	if [ "$CONT" = "y" ]; then
+		stow nvim
+		stow zsh
+		stow tmux
+		stow kitty
+		stow i3
+		stow polybar
+		stow picom
+		stow rofi
+		return
+	fi
 	echo "${CYAN}### Load Neovim Config ###${NC}"
 	read -p "Confirm (y/n)?" CONT
 	if [ "$CONT" = "y" ]; then
@@ -156,7 +173,31 @@ if ! [ -x "$(command -v rofi)" ]; then
 		echo "${RED}### Could not install Rofi ###${NC}"
 	fi
 fi
-
+if ! [ -x "$(command -v docker)" ]; then
+	echo "${CYAN}### Installing Docker ###${NC}"
+	URL="https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb"
+	DOWNLOAD_DIR="$HOME/Downloads"
+	DEB_FILE="docker-desktop-amd64.deb"
+	DEB_PATH="$DOWNLOAD_DIR/$DEB_FILE"
+	HasCurl
+	sudo apt install  ca-certificates  curl  gnupg  lsb-release
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	sudo apt update
+	sudo apt install docker-ce docker-ce-cli containerd.io -y
+	curl -L -o "$DEB_PATH" "$URL"
+	sudo apt install -y "$DEB_PATH"
+	if ! [ -x "$(command -v docker)" ]; then
+		echo "${RED}### Could not install Docker ###${NC}"
+	fi
+fi
+if ! [ -x "$(command -v docker compose)" ]; then
+	echo "${CYAN}### Installing Docker Compose ###${NC}"
+	sudo apt-get install docker-compose-plugin
+	if ! [ -x "$(command -v docker compose)" ]; then
+		echo "${RED}### Could not install Docker Compose ###${NC}"
+	fi
+fi
 if ! [ -x "$(command -v node)" ]; then
 	echo "${CYAN}### Installing Node ###${NC}"
 	HasCurl
