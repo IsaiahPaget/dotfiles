@@ -98,10 +98,20 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
+# Add this to your ~/.bashrc or ~/.zshrc file
+
+fzf_cd() {
+    # Use fzf to find files or directories
+    local selected=$(find $HOME -type f -o -type d | fzf --preview 'if [ -d {} ]; then ls -la {} | head -n 20; else batcat --color=always --style=numbers {}; fi')
+    cd "$(dirname "$selected")"
+}
+zle -N fzf_cd_widget fzf_cd
+bindkey '^o' fzf_cd_widget
 #
 # Example aliases
 alias vim="nvim"
 alias la="ls -A"
+alias search='fzf --preview="batcat --color=always --style=numbers {}"'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

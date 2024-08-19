@@ -166,6 +166,20 @@ if ! [ -x "$(command -v feh)" ]; then
 		echo "${RED}### Could not install Feh ###${NC}"
 	fi
 fi
+if ! [ -x "$(command -v fzf)" ]; then
+	echo "${CYAN}### Installing Fzf ###${NC}"
+	sudo apt-get install fzf
+	if ! [ -x "$(command -v fzf)" ]; then
+		echo "${RED}### Could not install Fzf ###${NC}"
+	fi
+fi
+if ! [ -x "$(command -v batcat)" ]; then
+	echo "${CYAN}### Installing Bat ###${NC}"
+	sudo apt-get install bat
+	if ! [ -x "$(command -v batcat)" ]; then
+		echo "${RED}### Could not install Bat ###${NC}"
+	fi
+fi
 if ! [ -x "$(command -v rofi)" ]; then
 	echo "${CYAN}### Installing Rofi ###${NC}"
 	sudo apt-get install rofi

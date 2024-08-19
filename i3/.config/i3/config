@@ -11,6 +11,7 @@
 
 set $mod Mod4
 
+exec --no-startup-id /usr/libexec/gsd-xsettings
 exec_always --no-startup-id killall picom
 exec_always --no-startup-id picom --experimental-backends -b
 exec_always --no-startup-id killall polybar
