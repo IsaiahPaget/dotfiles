@@ -205,10 +205,12 @@ if ! [ -x "$(command -v docker)" ]; then
 		echo "${RED}### Could not install Docker ###${NC}"
 	fi
 fi
-if ! [ -x "$(command -v docker compose)" ]; then
+if ! [ -x "$(command -v docker-compose)" ]; then
 	echo "${CYAN}### Installing Docker Compose ###${NC}"
-	sudo apt-get install docker-compose-plugin
-	if ! [ -x "$(command -v docker compose)" ]; then
+	sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
+	
+	if ! [ -x "$(command -v docker-compose)" ]; then
 		echo "${RED}### Could not install Docker Compose ###${NC}"
 	fi
 fi

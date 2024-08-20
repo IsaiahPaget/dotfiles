@@ -22,7 +22,7 @@ exec_always --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:JetBrains Nerd Font Mono 0
+font pango:JetBrains Nerd Font Mono 12
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -157,6 +157,7 @@ client.urgent            $base $base $base $base $base
 client.placeholder       $base $base $base $base $base
 client.background        $base
 
+
 for_window [tiling] border pixel 1
 for_window [floating] border normal
 
@@ -165,3 +166,4 @@ for_window [floating] border normal
 # bar {
 #         status_command i3status
 # }
+
