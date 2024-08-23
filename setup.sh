@@ -31,59 +31,63 @@ HasStow() {
 	fi
 }
 LoadConfigs() {
-	echo "${CYAN}### Load everything? ###${NC}"
+	echo "${CYAN}### Load Config? ###${NC}"
 	read -p "Confirm (y/n)?" CONT
 	if [ "$CONT" = "y" ]; then
-		stow nvim
-		stow zsh
-		stow tmux
-		stow kitty
-		stow i3
-		stow polybar
-		stow picom
-		stow rofi
-		return
-	fi
-	echo "${CYAN}### Load Neovim Config ###${NC}"
-	read -p "Confirm (y/n)?" CONT
-	if [ "$CONT" = "y" ]; then
-		stow nvim
-	fi
-	echo "${CYAN}### Load Zsh Config ###${NC}"
-	read -p "Confirm (y/n)?" CONT
-	if [ "$CONT" = "y" ]; then
-		stow zsh
-	fi
-	echo "${CYAN}### Load Tmux Config ###${NC}"
-	read -p "Confirm (y/n)?" CONT
-	if [ "$CONT" = "y" ]; then
-		stow tmux
-	fi
-	echo "${CYAN}### Load Kitty Config ###${NC}"
-	read -p "Confirm (y/n)?" CONT
-	if [ "$CONT" = "y" ]; then
-		stow kitty
-	fi
-	echo "${CYAN}### Load I3 Config ###${NC}"
-	read -p "Confirm (y/n)?" CONT
-	if [ "$CONT" = "y" ]; then
-		stow i3
-	fi
+		echo "${CYAN}### Load everything? ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow nvim
+			stow zsh
+			stow tmux
+			stow kitty
+			stow i3
+			stow polybar
+			stow picom
+			stow rofi
+			return
+		fi
+		echo "${CYAN}### Load Neovim Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow nvim
+		fi
+		echo "${CYAN}### Load Zsh Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow zsh
+		fi
+		echo "${CYAN}### Load Tmux Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow tmux
+		fi
+		echo "${CYAN}### Load Kitty Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow kitty
+		fi
+		echo "${CYAN}### Load I3 Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow i3
+		fi
 
-	echo "${CYAN}### Load Polybar Config ###${NC}"
-	read -p "Confirm (y/n)?" CONT
-	if [ "$CONT" = "y" ]; then
-		stow polybar
-	fi
-	echo "${CYAN}### Load Picom Config ###${NC}"
-	read -p "Confirm (y/n)?" CONT
-	if [ "$CONT" = "y" ]; then
-		stow picom
-	fi
-	echo "${CYAN}### Load Rofi Config ###${NC}"
-	read -p "Confirm (y/n)?" CONT
-	if [ "$CONT" = "y" ]; then
-		stow rofi
+		echo "${CYAN}### Load Polybar Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow polybar
+		fi
+		echo "${CYAN}### Load Picom Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow picom
+		fi
+		echo "${CYAN}### Load Rofi Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow rofi
+		fi
 	fi
 }
 if ! [ -x "$(command -v stow)" ]; then
@@ -219,6 +223,36 @@ if ! [ -x "$(command -v node)" ]; then
 	HasCurl
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 	nvm install node
+fi
+if ! [ -x "$(command -v i3)" ]; then
+	echo "${CYAN}### Installing I3 ###${NC}"
+	HasCurl
+	sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
+	                libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \
+	                libstartup-notification0-dev libxcb-randr0-dev \
+	                libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
+	                libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
+	                autoconf libxcb-xrm0 libxcb-xrm-dev automake \
+	                libxcb-shape0-dev pkg-config meson \
+		 suckless-tools
+	mkdir -p ~/.local/i3/
+	URL="https://i3wm.org/downloads/i3-4.23.tar.xz"
+	DOWNLOAD_DIR="$HOME/.local/i3"
+	TAR_FILE="i3-4.23.tar.xz"
+	TAR_PATH="$DOWNLOAD_DIR/$TAR_FILE"
+	I3_PATH="$DOWNLOAD_DIR/i3-4.23"
+	I3_BUILD_PATH="$I3_PATH/build"
+	curl -L -o "$TAR_PATH" "$URL"
+	tar xvf "$TAR_PATH" -C "$DOWNLOAD_DIR"
+	mkdir -p "$I3_BUILD_PATH"
+	cd "$I3_BUILD_PATH"
+	meson ..
+	ninja
+	sudo ninja install
+	cd $HOME
+	if ! [ -d "$I3_PATH" ]; then
+		echo "${RED}### Could not download I3 ###${NC}"
+	fi
 fi
 if ! [ -x "$(command -v picom)" ]; then
 	echo "${CYAN}### Installing Picom ###${NC}"
