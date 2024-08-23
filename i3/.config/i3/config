@@ -12,12 +12,9 @@
 set $mod Mod4
 
 exec --no-startup-id /usr/libexec/gsd-xsettings
-exec_always --no-startup-id killall picom
-exec_always --no-startup-id picom --experimental-backends -b
-exec_always --no-startup-id killall polybar
-exec_always --no-startup-id polybar --reload toph --config=~/.config/polybar/config.ini
-exec_always --no-startup-id killall feh
-exec_always --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/
+exec --no-startup-id picom --experimental-backends -b
+exec --no-startup-id polybar --reload toph --config=~/.config/polybar/config.ini
+exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -161,6 +158,7 @@ client.background        $base
 for_window [tiling] border pixel 1
 for_window [floating] border normal
 
+gaps inner 10
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {
