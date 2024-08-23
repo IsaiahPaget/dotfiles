@@ -4,12 +4,12 @@ These are my dotfiles, there is a shell script that auto installs everything, be
 
 ## How to install
 ```bash
-git clone https://github.com/IsaiahPaget/dotfiles.git
+git clone https://github.com/IsaiahPaget/dotfiles.git ~/.dotfiles/
+cd ~/.dotfiles/
 sh setup.sh
 ```
 
 ## Software included in the script
-
 - i3
 - Kitty
 - Neovim
