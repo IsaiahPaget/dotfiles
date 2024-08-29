@@ -101,10 +101,28 @@ source $ZSH/oh-my-zsh.sh
 # Add this to your ~/.bashrc or ~/.zshrc file
 
 fzf_cd() {
-    # Use fzf to find files or directories
-    local selected=$(find $HOME -type f -o -type d | fzf --preview 'if [ -d {} ]; then ls -la {} | head -n 20; else batcat --color=always --style=numbers {}; fi')
-    cd "$(dirname "$selected")"
+    # Find the directory above the current working directory
+    local parent_dir="$(dirname "$PWD")"
+
+    # Use fzf to find files or directories in the parent directory
+    local selected=$(find "$parent_dir" -type f -o -type d | fzf --preview 'if [ -d {} ]; then ls -la {} | head -n 20; else batcat --color=always --style=numbers {}; fi')
+
+    if [ -z "$selected" ]; then
+        echo "No selection made."
+        return
+    fi
+
+    if [ -d "$selected" ]; then
+        cd "$selected"
+        return
+    else
+        # Open the directory containing the file and the file itself in nvim
+        local file_dir="$(dirname "$selected")"
+        cd "$file_dir" && nvim "$(basename "$selected")"
+        return
+    fi
 }
+
 zle -N fzf_cd_widget fzf_cd
 bindkey '^o' fzf_cd_widget
 #
