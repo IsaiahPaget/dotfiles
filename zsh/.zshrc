@@ -130,6 +130,7 @@ bindkey '^o' fzf_cd_widget
 alias vim="nvim"
 alias la="ls -A"
 alias search='fzf --preview="batcat --color=always --style=numbers {}"'
+alias gitl="git log --all --graph --decorate"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
