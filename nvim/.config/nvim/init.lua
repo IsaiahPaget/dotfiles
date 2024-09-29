@@ -648,6 +648,15 @@ require('lazy').setup({
           end,
         },
       }
+      require('lspconfig').gdscript.setup {
+        filetypes = { 'gd', 'gdscript' },
+        flags = {
+          debounce_text_changes = 150,
+        },
+        completion = {
+          autocomplete = false,
+        },
+      }
     end,
   },
 
