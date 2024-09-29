@@ -28,3 +28,4 @@ sh setup.sh
 - feh
 - Node
 - Jetbrain Nerd Font Mono
+- Redshift

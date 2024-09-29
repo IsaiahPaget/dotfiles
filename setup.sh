@@ -45,6 +45,7 @@ LoadConfigs() {
 			stow polybar
 			stow picom
 			stow rofi
+			stow redshift
 			return
 		fi
 		echo "${CYAN}### Load Neovim Config ###${NC}"
@@ -87,6 +88,11 @@ LoadConfigs() {
 		read -p "Confirm (y/n)?" CONT
 		if [ "$CONT" = "y" ]; then
 			stow rofi
+		fi
+		echo "${CYAN}### Load Redshift Config ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow redshift
 		fi
 	fi
 }
@@ -266,6 +272,13 @@ if ! [ -x "$(command -v polybar)" ]; then
 	sudo apt-get install polybar
 	if ! [ -x "$(command -v polybar)" ]; then
 		echo "${RED}### Could not install Polybar ###${NC}"
+	fi
+fi
+if ! [ -x "$(command -v redshift)" ]; then
+	echo "${CYAN}### Installing Redshift ###${NC}"
+	sudo apt-get install redshift
+	if ! [ -x "$(command -v redshift)" ]; then
+		echo "${RED}### Could not install Redshift ###${NC}"
 	fi
 fi
 if ! [ -d "$HOME/.local/kitty.app" ]; then
