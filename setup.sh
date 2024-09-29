@@ -45,7 +45,6 @@ LoadConfigs() {
 			stow polybar
 			stow picom
 			stow rofi
-			stow redshift
 			return
 		fi
 		echo "${CYAN}### Load Neovim Config ###${NC}"
@@ -88,11 +87,6 @@ LoadConfigs() {
 		read -p "Confirm (y/n)?" CONT
 		if [ "$CONT" = "y" ]; then
 			stow rofi
-		fi
-		echo "${CYAN}### Load Redshift Config ###${NC}"
-		read -p "Confirm (y/n)?" CONT
-		if [ "$CONT" = "y" ]; then
-			stow redshift
 		fi
 	fi
 }
