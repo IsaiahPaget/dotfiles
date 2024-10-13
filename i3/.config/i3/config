@@ -13,7 +13,7 @@ set $mod Mod1
 
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id picom --experimental-backends -b
-exec --no-startup-id redshift -l 49.87:-119.51 -t 6400:3600 -g 0.8 -m vidmode -v
+exec --no-startup-id redshift -l 49.87:-119.51 -t 6400:2600 -g 0.8 -m vidmode -v
 exec --no-startup-id polybar --reload toph --config=~/.config/polybar/config.ini
 exec --no-startup-id feh --bg-scale --randomize ~/Pictures/Wallpapers/
 # Font for window titles. Will also be used by the bar unless a different font
@@ -32,7 +32,7 @@ font pango:JetBrains Nerd Font Mono 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
+bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty -e tmux
 
 # kill focused window
 bindsym $mod+q kill
