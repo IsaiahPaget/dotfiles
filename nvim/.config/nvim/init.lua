@@ -117,6 +117,9 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
+-- Don't use swap files
+vim.opt.swapfile = false
+
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -223,6 +226,11 @@ if not vim.uv.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+local gdproject = io.open(vim.fn.getcwd() .. './project.godot', 'r')
+if gdproject then
+  io.close(gdproject)
+  vim.fn.serverstart './godothost'
+end
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -649,12 +657,10 @@ require('lazy').setup({
         },
       }
       require('lspconfig').gdscript.setup {
+        -- editor flags: --server ./godothost --remote-send "<C-\><C-N>:n {file}<CR>{line}G{col}|"
         filetypes = { 'gd', 'gdscript' },
         flags = {
           debounce_text_changes = 150,
-        },
-        completion = {
-          autocomplete = false,
         },
       }
     end,

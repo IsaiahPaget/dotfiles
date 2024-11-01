@@ -32,10 +32,13 @@ font pango:JetBrains Nerd Font Mono 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty -e tmux
+bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty
 
 # kill focused window
 bindsym $mod+q kill
+
+# Open file manager
+bindsym $mod+y exec --no-startup-id nautilus
 
 # start dmenu (a program launcher)
 bindsym $mod+i exec --no-startup-id rofi -show combi
