@@ -139,3 +139,5 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/.local/Odin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="/home/isaiahpaget/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/isaiahpaget/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

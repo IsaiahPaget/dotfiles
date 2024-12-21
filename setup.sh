@@ -5,6 +5,8 @@ YELLOW="\033[1;33m"
 NC="\033[0m"
 echo "${CYAN}### Starting ###${NC}"
 
+mkdir -p ~/Downloads/
+
 echo "${CYAN}### Do you want to update? ###${NC}"
 read -p "Confirm (y/n)?" CONT
 if [ "$CONT" = "y" ]; then
