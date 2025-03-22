@@ -615,7 +615,81 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        --
+        tailwindcss = {
+          filetypes = { 'html', 'css', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'php', 'blade' },
+          init_options = {
+            userLanguages = {
+              php = 'html', -- Treat PHP files as HTML for Tailwind CSS LSP
+            },
+          },
+        },
+        intelephense = {
+          settings = {
+            intelephense = {
+              stubs = {
+                'bcmath',
+                'bz2',
+                'Core',
+                'curl',
+                'date',
+                'dom',
+                'fileinfo',
+                'filter',
+                'gd',
+                'gettext',
+                'hash',
+                'iconv',
+                'imap',
+                'intl',
+                'json',
+                'libxml',
+                'mbstring',
+                'mcrypt',
+                'mysql',
+                'mysqli',
+                'password',
+                'pcntl',
+                'pcre',
+                'PDO',
+                'pdo_mysql',
+                'Phar',
+                'readline',
+                'regex',
+                'session',
+                'SimpleXML',
+                'sockets',
+                'sodium',
+                'standard',
+                'superglobals',
+                'tokenizer',
+                'xml',
+                'xdebug',
+                'xmlreader',
+                'xmlwriter',
+                'yaml',
+                'zip',
+                'zlib',
+                'wordpress-stubs',
+                'woocommerce-stubs',
+                'acf-pro-stubs',
+                'wordpress-globals',
+                'wp-cli-stubs',
+                'genesis-stubs',
+                'polylang-stubs',
+              },
+              environment = {
+                includePaths = {
+                  '~/.config/composer/vendor/php-stubs/',
+                  '~/.config/composer/vendor/wpsyntex/',
+                },
+              },
+              files = {
+                maxSize = 5000000,
+              },
+            },
+          },
+        },
+
         tsserver = {
           init_options = {
             plugins = {
@@ -658,7 +732,9 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        'stylua', -- Used to format Lua code,
+        'intelephense',
+        'phpactor',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
