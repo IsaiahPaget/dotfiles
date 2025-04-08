@@ -615,14 +615,6 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tailwindcss = {
-          filetypes = { 'html', 'css', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'php', 'blade' },
-          init_options = {
-            userLanguages = {
-              php = 'html', -- Treat PHP files as HTML for Tailwind CSS LSP
-            },
-          },
-        },
         intelephense = {
           settings = {
             intelephense = {
