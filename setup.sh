@@ -124,20 +124,10 @@ fi
 if ! [ -x "$(command -v nvim)" ]; then
 	echo "${CYAN}### Installing Neovim ###${NC}"
 	HasCurl
-	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-	chmod u+x nvim.appimage
-	mkdir -p /opt/nvim
-	mv nvim.appimage /opt/nvim/nvim
-	export PATH="$PATH:/opt/nvim/"
-	if ! [ -x "$(command -v nvim)" ]; then
-		./nvim.appimage --appimage-extract
-		./squashfs-root/AppRun --version
-		sudo mv squashfs-root /
-        	sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
-	fi
-	if ! [ -x "$(command -v nvim)" ]; then
-		echo "${RED}### Could not install Neovim ###${NC}"
-	fi
+	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+	chmod u+x nvim-linux-x86_64.appimage
+	mkdir -p ~/.local/bin/
+	mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 fi
 if ! [ -x "$(command -v tmux)" ]; then
 	echo "${CYAN}### Installing Tmux ###${NC}"
