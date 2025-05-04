@@ -47,6 +47,7 @@ LoadConfigs() {
 			stow polybar
 			stow picom
 			stow rofi
+			stow ohmyposh
 			return
 		fi
 		echo "${CYAN}### Load Neovim Config ###${NC}"
@@ -104,16 +105,6 @@ if ! [ -x "$(command -v zsh)" ]; then
 	echo "${CYAN}### Installing ZSH ###${NC}"
 	sudo apt-get install zsh
 fi
-if ! [ -d "$HOME/.oh-my-zsh" ]; then
-	echo "${CYAN}### Installing oh-my-zsh ###${NC}"
-	HasCurl
-	HasZsh
-	echo "${YELLOW}### Type 'exit' after going through the oh-my-zsh installer ###${NC}"
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"	
-	if ! [ -d "$HOME/.oh-my-zsh" ]; then
-		echo "${RED}### Could not install oh-my-zsh ###${NC}"
-	fi
-fi
 if ! [ -x "$(command -v rg)" ]; then
 	echo "${CYAN}### Installing Ripgrep ###${NC}"
 	sudo apt-get install ripgrep
@@ -164,7 +155,8 @@ if ! [ -x "$(command -v feh)" ]; then
 fi
 if ! [ -x "$(command -v fzf)" ]; then
 	echo "${CYAN}### Installing Fzf ###${NC}"
-	sudo apt-get install fzf
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
 	if ! [ -x "$(command -v fzf)" ]; then
 		echo "${RED}### Could not install Fzf ###${NC}"
 	fi
