@@ -1,5 +1,5 @@
 return {
-	'isaiahpaget/modes.nvim',
+	'mvllow/modes.nvim',
 	opts = {
 		colors = {
 			bg = '', -- Optional bg param, defaults to Normal hl group
