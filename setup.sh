@@ -36,6 +36,11 @@ LoadConfigs() {
 	echo "${CYAN}### Load Config? ###${NC}"
 	read -p "Confirm (y/n)?" CONT
 	if [ "$CONT" = "y" ]; then
+		echo "${CYAN}### Load Kanata? ###${NC}"
+		read -p "Confirm (y/n)?" CONT
+		if [ "$CONT" = "y" ]; then
+			stow kanata
+		fi
 		echo "${CYAN}### Load everything? ###${NC}"
 		read -p "Confirm (y/n)?" CONT
 		if [ "$CONT" = "y" ]; then
