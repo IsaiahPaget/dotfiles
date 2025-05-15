@@ -65,7 +65,7 @@ return {
 				opts.desc = 'Restart LSP'
 				keymap.set('n', '<leader>rs', ':LspRestart<CR>', opts) -- mapping to restart lsp if necessary
 
-					-- Fuzzy find all the symbols in your current document.
+				-- Fuzzy find all the symbols in your current document.
 				--  Symbols are things like variables, functions, types, etc.
 				opts.desc = '[D]ocument [S]ymbols'
 				keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols)
@@ -80,8 +80,8 @@ return {
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		local vue_ls_share = vim.fn.expand '$MASON/share/vue-language-server'
-		local vue_plugin_path = vue_ls_share .. '/node_modules/@vue/language-server'
+		local vue_plugin_path = vim.fn.expand '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
+
 		mason_lspconfig.setup_handlers {
 			-- default handler for installed servers
 			function(server_name)
@@ -96,8 +96,8 @@ return {
 					filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
 				}
 			end,
-			['tsserver'] = function()
-				lspconfig["tsserver"].setup {
+			['ts_ls'] = function()
+				lspconfig['ts_ls'].setup {
 					init_options = {
 						plugins = {
 							{
