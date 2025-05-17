@@ -5,8 +5,8 @@ return {
 	init = function()
 		-- Load the colorscheme here.
 		-- Like many other themes, this one has different styles, and you could load
-		vim.o.background = 'dark'
 		vim.cmd.colorscheme 'gruvbox'
+		vim.cmd(":hi statusline guibg=NONE")
 	end,
 
 }
