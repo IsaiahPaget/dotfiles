@@ -49,6 +49,14 @@ bindsym $mod+u exec --no-startup-id rofi -show window
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+# pactl volume
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down

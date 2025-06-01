@@ -264,6 +264,13 @@ if ! [ -x "$(command -v redshift)" ]; then
 		echo "${RED}### Could not install Redshift ###${NC}"
 	fi
 fi
+if ! [ -x "$(command -v brightnessctl)" ]; then
+	echo "${CYAN}### Installing Brightnessctl ###${NC}"
+	sudo apt-get install brightnessctl
+	if ! [ -x "$(command -v brightnessctl)" ]; then
+		echo "${RED}### Could not install Brightnessctl ###${NC}"
+	fi
+fi
 if ! [ -d "$HOME/.local/kitty.app" ]; then
 	echo "${CYAN}### Installing Kitty ###${NC}"
 	HasCurl
