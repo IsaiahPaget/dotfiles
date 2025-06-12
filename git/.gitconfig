@@ -1,0 +1,52 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = isaiahpaget@gmail.com
+	name = Isaiah Paget
+[core]
+	editor = nvim
+	compression = 9
+	whitespace = error
+	preloadindex = true
+[init]
+	defaultBranch = dev
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+[diff]
+	context = 3
+	renames = copies
+	interHunkContext = 10
+[push]
+	autoSetupRemote = true
+	default = current
+	followjtags  = true
+[pull]
+	default = current
+	rebase = true
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn
+[log]
+	abbrevCommit = true
+	graphColors = blue,yellow,cyan,magenta,green,red
+[color "decorate"]
+	HEAD = red
+	branch = blue
+	tag = yellow
+	remoteBranch = green
+[color "branch"]
+	current = yellow
+	local = blue
+	remote = yellow
+	upstream = green
+	plain = red
+[branch]
+	sort = -committerdate
+[tag]
+	sort = -taggerdate
+[pager]
+	branch = false
+	tag = false

@@ -68,16 +68,17 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 alias vim="nvim"
 alias la="ls -A --color"
 
-gitl() {
-  if [[ "$1" == "-np" ]]; then
-    shift
-    git --no-pager log --all --graph --decorate "$@"
-  elif [[ -n "$TMUX" ]]; then
-    tmux split-window -v "git log --all --graph --decorate $*; read -n 1 -s -r -p 'Press any key to close...'"
-  else
-    git log --all --graph --decorate "$@"
-  fi
-}
+# git
+alias gs="git status --short"
+alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
+alias ga="git add -A"
+alias gap="git add --patch"
+alias gc="git commit"
+alias gu="git pull"
+alias gb="git branch"
+alias gi="git init"
+alias gcl="git clone"
+alias gl='git log --graph --all --pretty=format:"%C(yellow)%h %C(blue) %an  %ar%C(green)  %D%n%s%n"'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
