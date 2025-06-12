@@ -50,6 +50,18 @@ return {
 			--
 			defaults = {
 				path_display = { 'smart' },
+				hidden = true,
+				file_ignore_patterns = {
+					'node_modules/.*',
+					'winter.css',
+					'vendor.css',
+					'%.git/.*',
+					'%.DS_Store',
+					'build/.*',
+					'dist/.*',
+					'target/.*',
+					'%.lock',
+				},
 				-- mappings = {
 				-- 	i = {
 				-- 		["<C-k>"] = actions.move_selection_previous, -- move to prev result

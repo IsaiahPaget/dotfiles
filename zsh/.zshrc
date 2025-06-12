@@ -93,3 +93,4 @@ export PHP_INI_SCAN_DIR="/home/isaiahpaget/.config/herd-lite/bin:$PHP_INI_SCAN_D
 
 export PATH="/home/isaiah/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/isaiah/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+. "/home/isaiahpaget/.deno/env"
