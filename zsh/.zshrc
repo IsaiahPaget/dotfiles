@@ -69,9 +69,9 @@ alias vim="nvim"
 alias la="ls -A --color"
 
 # git
-alias gs="git status --short"
+alias gs="git status"
 alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
-alias ga="git add -A"
+alias ga="git add"
 alias gap="git add --patch"
 alias gc="git commit"
 alias gu="git pull"
