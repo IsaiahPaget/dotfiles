@@ -1,16 +1,17 @@
 configuration{
     modi: "run,window,combi";
-    icon-theme: "Oranchelo";
+    icon-theme: "Pop+";
     show-icons: true;
     terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-combi: " 🖥️  All ";
-    display-run: " 🏃  Run ";
-    display-window: " 🪟  Window";
+    display-combi: " ";
+    display-run: " ";
+    display-drun: " ";
+    display-window: " ";
     sidebar-mode: true;
 }
 
-@theme "./gruvbox-material.rasi"
+@theme "./squared-everforest.rasi"

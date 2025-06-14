@@ -271,6 +271,13 @@ if ! [ -x "$(command -v brightnessctl)" ]; then
 		echo "${RED}### Could not install Brightnessctl ###${NC}"
 	fi
 fi
+if ! [ -x "$(command -v xbacklight)" ]; then
+	echo "${CYAN}### Installing xbacklight ###${NC}"
+	sudo apt-get install xbacklight
+	if ! [ -x "$(command -v xbacklight)" ]; then
+		echo "${RED}### Could not install Brightnessctl ###${NC}"
+	fi
+fi
 if ! [ -d "$HOME/.local/kitty.app" ]; then
 	echo "${CYAN}### Installing Kitty ###${NC}"
 	HasCurl
@@ -291,6 +298,8 @@ if ! [ -d "$HOME/.local/kitty.app" ]; then
 		echo "${RED}### Could not install Kitty ###${NC}"
 	fi
 fi
+echo "${CYAN}### Installing Font Awesome ###${NC}"
+sudo apt-get install fonts-font-awesome
 if ! [ -f "$HOME/.local/share/fonts/JetBrainsMonoNerdFont-BoldItalic.ttf" ]; then
 	echo "${CYAN}### Installing JetBrainsMonoNerdFont ###${NC}"
 	HasCurl
