@@ -4,10 +4,7 @@ return {
 		require('nvim-highlight-colors').setup {
 			---Render style
 			---@usage 'background'|'foreground'|'virtual'
-			render = 'virtual',
-
-			---Set virtual symbol (requires render to be set to 'virtual')
-			virtual_symbol = '■',
+			render = 'background',
 
 			---Highlight hex colors, e.g. '#FFFFFF'
 			enable_hex = true,
@@ -34,7 +31,7 @@ return {
 			enable_named_colors = true,
 
 			---Highlight tailwind colors, e.g. 'bg-blue-500'
-			enable_tailwind = true,
+			enable_tailwind = false,
 
 			-- Exclude filetypes or buftypes from highlighting e.g. 'exclude_buftypes = {'text'}'
 			exclude_filetypes = { 'vue' },
