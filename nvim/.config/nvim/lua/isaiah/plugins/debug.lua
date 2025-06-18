@@ -27,6 +27,25 @@ return {
   keys = function(_, keys)
     local dap = require 'dap'
     local dapui = require 'dapui'
+
+	    -- PHP Adapter Configuration
+    dap.adapters.php = {
+      type = 'executable',
+      command = 'node',
+      args = { os.getenv("HOME") .. '/.local/share/nvim/mason/packages/php-debug-adapter/extension/out/phpDebug.js' }
+    }
+
+    dap.configurations.php = {
+      {
+        type = 'php',
+        request = 'launch',
+        name = 'Listen for Xdebug',
+        port = 9003,
+        pathMappings = {
+          ["/var/www/html"] = "${workspaceFolder}", -- Adjust based on container path
+        },
+      },
+    }
     dap.adapters.godot = {
       type = 'server',
       host = '127.0.0.1',
@@ -78,6 +97,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+		'php',
       },
     }
 
