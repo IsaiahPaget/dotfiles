@@ -25,7 +25,7 @@ if [[ -f ~/.fzf.zsh ]]; then
 fi
 
 zinit load zsh-users/zsh-completions
-zinit load zsh-users/zsh-autosuggestions
+# zinit load zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load Aloxaf/fzf-tab
 
@@ -69,17 +69,7 @@ alias vim="nvim"
 alias la="ls -A --color"
 
 # git
-alias gs="git status"
 alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
-alias ga="git add"
-alias gap="git add --patch"
-alias gc="git commit"
-alias gu="git pull"
-alias gp="git push"
-alias gcnb="git checkout -b"
-alias gcb="git checkout"
-alias gi="git init"
-alias gcl="git clone"
 alias gl='git log --graph --all --pretty=format:"%C(yellow)%h %C(blue) %an  %ar%C(green)  %D%n%s%n"'
 
 export NVM_DIR="$HOME/.nvm"
