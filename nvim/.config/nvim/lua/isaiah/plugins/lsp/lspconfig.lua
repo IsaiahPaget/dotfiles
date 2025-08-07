@@ -77,7 +77,7 @@ return {
 			end,
 		})
 
-		-- used to enable autocompletion (assign to every lsp server config)
+
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		local vue_plugin_path = vim.fn.expand '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
@@ -98,6 +98,7 @@ return {
 			end,
 			['ts_ls'] = function()
 				lspconfig['ts_ls'].setup {
+					capabilities = capabilities,
 					init_options = {
 						plugins = {
 							{
