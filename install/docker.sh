@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v docker &>/dev/null; then
 	echo "${CYAN}### Installing Docker ###${NC}"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v i3 &>/dev/null; then
 	echo "${CYAN}### Installing I3 ###${NC}"

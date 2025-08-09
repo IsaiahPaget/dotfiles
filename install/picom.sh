@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v picom &>/dev/null; then
 	echo "${CYAN}### Installing Picom ###${NC}"

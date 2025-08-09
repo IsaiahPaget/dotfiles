@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v node &>/dev/null; then
 	echo "${CYAN}### Installing Node ###${NC}"

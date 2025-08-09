@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v tmux &>/dev/null; then
 	echo "${CYAN}### Installing Tmux ###${NC}"

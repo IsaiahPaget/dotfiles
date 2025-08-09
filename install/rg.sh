@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v rg &>/dev/null; then
 	echo "${CYAN}### Installing Ripgrep ###${NC}"

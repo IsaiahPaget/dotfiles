@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v stow &>/dev/null; then
 	echo "${CYAN}### Installing Stow ###${NC}"

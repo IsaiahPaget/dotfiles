@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v redshift &>/dev/null; then
 	echo "${CYAN}### Installing Redshift ###${NC}"

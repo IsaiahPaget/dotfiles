@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v fzf &>/dev/null; then
 	echo "${CYAN}### Installing Fzf ###${NC}"

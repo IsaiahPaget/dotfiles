@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v feh &>/dev/null; then
 	echo "${CYAN}### Installing Feh ###${NC}"

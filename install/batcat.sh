@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v batcat &>/dev/null; then
 	echo "${CYAN}### Installing Bat ###${NC}"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v nvim &>/dev/null; then
 	echo "${CYAN}### Installing Neovim ###${NC}"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v polybar &>/dev/null; then
 	echo "${CYAN}### Installing Polybar ###${NC}"

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v gh &>/dev/null; then
 	echo "${CYAN}### Installing Github CLI ###${NC}"

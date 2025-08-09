@@ -1,7 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-sudo apt-get install fonts-font-awesome
-echo "${CYAN}### Installing Font Awesome ###${NC}"
 if ! [ -f "$HOME/.local/share/fonts/JetBrainsMonoNerdFont-BoldItalic.ttf" ]; then
 	echo "${CYAN}### Installing JetBrainsMonoNerdFont ###${NC}"
 	mkdir ~/.local/share/fonts
