@@ -17,6 +17,7 @@ exec --no-startup-id redshift -l 49.87:-119.51 -t 6400:2600 -g 0.8 -m vidmode -v
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id sh ~/.dotfiles/wallpapers.sh
 exec --no-startup-id ~/.config/i3/scripts/set-resolution.sh
+exec --no-startup-id flameshot
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -162,7 +163,7 @@ client.urgent            $base $base $base $base $base
 client.placeholder       $base $base $base $base $base
 client.background        $base
 
-
+for_window [title=".*rl$"] floating enable
 for_window [tiling] border pixel 1
 for_window [floating] border normal
 
