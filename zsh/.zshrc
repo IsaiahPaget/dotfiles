@@ -66,6 +66,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias vim="nvim"
+alias wifi="nmtui"
 alias la="ls -A --color"
 
 # git
