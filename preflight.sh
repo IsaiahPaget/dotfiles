@@ -2,9 +2,9 @@
 
 if ! command -v stow &>/dev/null; then
 	echo -e "${CYAN}### Installing Stow ###${NC}"
-	sudo apt-get install stow -y
+	sudo pacman -S stow -y
 fi
 if ! command -v curl &>/dev/null; then
 	echo -e "${CYAN}### Installing Curl ###${NC}"
-	sudo apt-get install curl -y
+	sudo pacman -S curl -y
 fi

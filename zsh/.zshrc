@@ -68,6 +68,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 alias vim="nvim"
 alias wifi="nmtui"
 alias la="ls -A --color"
+alias k='~/.cargo/bin/kanata -c ~/.config/kanata/config.kbd'
 
 # git
 alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
@@ -79,6 +80,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$HOME/.local/bin:$PATH
 export PATH="$HOME/.local/Odin:$PATH"
 export PATH="$HOME/.local/go/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if [ -x "$(command -v rbenv)" ]; then
 	eval "$(rbenv init -)"

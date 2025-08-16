@@ -22,7 +22,7 @@ echo -e "${GREEN}### Starting ###${NC}"
 echo -e "${CYAN}### Do you want to update? ###${NC}"
 read -p "Confirm (y/n)?" CONT
 if [ "$CONT" = "y" ]; then
-	sudo apt update && sudo apt upgrade -y
+	sudo pacman -Syu
 fi
 
 ##

@@ -1,2 +1,1 @@
-#!/bin/bash
 stow git

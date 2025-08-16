@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! command -v batcat &>/dev/null; then
+if ! command -v bat &>/dev/null; then
 	echo "${CYAN}### Installing Bat ###${NC}"
-	sudo apt-get install bat -y
+	sudo pacman -S bat -y
 fi
