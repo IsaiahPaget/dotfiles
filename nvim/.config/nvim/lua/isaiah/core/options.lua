@@ -1,9 +1,9 @@
 vim.cmd 'let g:netrw_liststyle = 3'
 
 local opt = vim.opt
+vim.o.winborder = 'rounded'
 -- phat cursor
 opt.guicursor = ''
-
 opt.relativenumber = true
 opt.number = true
 

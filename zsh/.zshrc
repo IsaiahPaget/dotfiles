@@ -68,7 +68,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 alias vim="nvim"
 alias wifi="nmtui"
 alias la="ls -A --color"
-alias k='~/.cargo/bin/kanata -c ~/.config/kanata/config.kbd'
+alias k='sudo ~/.cargo/bin/kanata -c ~/.config/kanata/config.kbd'
 
 # git
 alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
