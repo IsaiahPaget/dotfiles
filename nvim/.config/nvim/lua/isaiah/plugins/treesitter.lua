@@ -5,7 +5,7 @@ return {
 		"windwp/nvim-ts-autotag",
 	},
 	opts = {
-		ensure_installed = { 'blade', 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+		ensure_installed = { 'blade', 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'ocaml', 'query', 'vim', 'vimdoc' },
 		-- Autoinstall languages that are not installed
 		auto_install = true,
 		highlight = {
@@ -44,6 +44,8 @@ return {
 			},
 			filetype = 'blade',
 		}
+
+
 		-- There are additional nvim-treesitter modules that you can use to interact
 		-- with nvim-treesitter. You should go explore a few and see what interests you:
 		--

@@ -15,6 +15,7 @@ opt.autoindent = true
 
 opt.wrap = false
 
+opt.mouse="a"
 -- searching
 opt.ignorecase = true
 opt.smartcase = true
@@ -38,6 +39,7 @@ opt.undofile = true
 opt.inccommand = 'split'
 opt.clipboard:append 'unnamedplus'
 
+
 opt.hlsearch = false
 opt.incsearch = true
 
@@ -46,3 +48,10 @@ opt.signcolumn = 'yes'
 opt.isfname:append '@-@'
 
 opt.updatetime = 50
+
+-- Filetype mappings
+vim.filetype.add({
+	extension = {
+		re = 'ocaml',
+	},
+})

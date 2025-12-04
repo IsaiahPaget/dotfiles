@@ -38,6 +38,7 @@ fi
 zinit cdreplay -q
 
 
+eval $(opam env)
 eval "$(oh-my-posh init zsh --config ~/.config/isaiah.omp.toml)"
 
 # Keybindings
@@ -65,6 +66,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
+alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
 alias vim="nvim"
 alias wifi="nmtui"
 alias la="ls -A --color"
@@ -85,6 +87,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 if [ -x "$(command -v rbenv)" ]; then
 	eval "$(rbenv init -)"
 fi
+export PICO_SDK_PATH="~/.pico-sdk/sdk/2.2.0"
 export PATH="/home/isaiahpaget/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/isaiahpaget/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 

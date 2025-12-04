@@ -11,21 +11,28 @@ keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Make splits equal size' }) -- 
 keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
 -- move stuff
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
-vim.keymap.set('n', 'J', 'mzJ`z')
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+keymap.set('n', 'J', 'mzJ`z')
+keymap.set('n', '<C-d>', '<C-d>zz')
+keymap.set('n', '<C-u>', '<C-u>zz')
+keymap.set('n', 'n', 'nzzzv')
+keymap.set('n', 'N', 'Nzzzv')
 
 -- greatest remap ever
-vim.keymap.set('x', '<leader>p', [["_dP]])
+keymap.set('x', '<leader>p', [["_dP]])
 
-vim.keymap.set('n', 'Q', '<nop>')
-vim.keymap.set('n', '<C-z>', '<nop>')
-vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+keymap.set('n', 'Q', '<nop>')
+keymap.set('n', '<C-z>', '<nop>')
+keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
-vim.keymap.set('n', '<leader>re', function()
+keymap.set('n', '<leader>re', function()
 	require('isaiah.custom.run-sh').run_exec()
 end, { desc = 'Run a shell script from cwd' }, { silent = true })
+-- Alt + =  (same key as +)
+keymap.set("n", "<M-=>", ":resize +2<CR>")
+keymap.set("n", "<M-->", ":resize -2<CR>")
+
+-- Optional: horizontal resizing
+keymap.set("n", "<M-+>", ":vertical resize +2<CR>")
+keymap.set("n", "<M-_>", ":vertical resize -2<CR>")

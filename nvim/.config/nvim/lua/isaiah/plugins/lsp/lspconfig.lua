@@ -18,6 +18,31 @@ return {
 
 		local keymap = vim.keymap -- for conciseness
 
+		-- Only show diagnostics (virtual text) in normal mode
+		vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
+			callback = function()
+				vim.diagnostic.config { virtual_text = false }
+			end,
+		})
+
+		vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
+			callback = function()
+				vim.diagnostic.config {
+					virtual_text = {
+						prefix = '● ', -- or "● " if you like
+						source = 'if_many',
+					},
+				}
+			end,
+		})
+
+		-- Initial setup (for when Neovim first starts)
+		vim.diagnostic.config {
+			virtual_text = {
+				prefix = '● ',
+				source = 'if_many',
+			},
+		}
 		vim.api.nvim_create_autocmd('LspAttach', {
 			group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 			callback = function(ev)
@@ -77,8 +102,8 @@ return {
 			end,
 		})
 
-
 		local capabilities = cmp_nvim_lsp.default_capabilities()
+		-- capabilities.textDocument.completion = nil
 
 		local vue_plugin_path = vim.fn.expand '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
 
@@ -115,7 +140,9 @@ return {
 				lspconfig['clangd'].setup {
 					cmd = {
 						'clangd',
+						'--fallback-style=webkit',
 					},
+					filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto', 'hpp' },
 				}
 			end,
 			['lua_ls'] = function()
@@ -133,6 +160,30 @@ return {
 							},
 						},
 					},
+				}
+			end,
+			['intelephense'] = function()
+				lspconfig['intelephense'].setup {
+					capabilities = capabilities,
+					root_dir = function(fname)
+						local util = require 'lspconfig.util'
+						local cwd = vim.loop.cwd()
+						local root = util.root_pattern('composer.json', '.git')(fname)
+						return util.path.is_descendant(cwd, root) and cwd or root
+					end,
+					settings = {
+						intelephense = {
+							files = {
+								maxSize = 1000000,
+							},
+						},
+					},
+				}
+			end,
+			['ocamllsp'] = function()
+				lspconfig['ocamllsp'].setup {
+					capabilities = capabilities,
+					filetypes = { 'ocaml', 'reason' },
 				}
 			end,
 		}
