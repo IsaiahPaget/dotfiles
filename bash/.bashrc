@@ -10,3 +10,4 @@ source ~/.local/share/omarchy/default/bash/rc
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 alias la='ls -la'
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
