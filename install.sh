@@ -23,6 +23,7 @@ echo -e "${CYAN}### Do you want to update? ###${NC}"
 read -p "Confirm (y/n)?" CONT
 if [ "$CONT" = "y" ]; then
 	sudo pacman -Syu
+  yay -Syu
 fi
 
 ##
