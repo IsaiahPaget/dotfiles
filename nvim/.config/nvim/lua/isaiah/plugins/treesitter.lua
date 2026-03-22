@@ -44,6 +44,14 @@ return {
 			},
 			filetype = 'blade',
 		}
+		parser_config.reason = {
+			install_info = {
+				url = "https://github.com/reasonml-editor/tree-sitter-reason",
+				files = { "src/parser.c", "src/scanner.c" },
+				branch = "master",
+			},
+			filetype = 'reason',
+		}
 
 
 		-- There are additional nvim-treesitter modules that you can use to interact

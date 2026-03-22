@@ -15,11 +15,23 @@ end
 
 return {
 	path,
-	priority = 1000, -- Load before all others
+	priority = 1000,
 	lazy = false,
 	init = function()
-		-- Load the colorscheme dynamically
 		vim.cmd.colorscheme(colorscheme)
-		vim.cmd 'hi statusline guibg=NONE'
+
+		-- Statusline
+		vim.cmd 'hi StatusLine guibg=NONE'
+
+		-- Main editor
+		vim.api.nvim_set_hl(0, "Normal",      { bg = "none" })
+		vim.api.nvim_set_hl(0, "NormalNC",    { bg = "none" })
+		vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+		vim.api.nvim_set_hl(0, "SignColumn",  { bg = "none" })
+
+		-- NvimTree
+		vim.api.nvim_set_hl(0, "NvimTreeNormal",   { bg = "none" })
+		vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })
+		vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "none" })
 	end,
 }

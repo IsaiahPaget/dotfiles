@@ -49,9 +49,10 @@ opt.isfname:append '@-@'
 
 opt.updatetime = 50
 
--- Filetype mappings
+-- -- Filetype mappings
 vim.filetype.add({
 	extension = {
-		re = 'ocaml',
+		re = 'reason',
 	},
 })
+vim.treesitter.language.add("reason", { filetype = "reason" })
