@@ -50,7 +50,6 @@ return {
 				files = { "src/parser.c", "src/scanner.c" },
 				branch = "master",
 			},
-			filetype = 'reason',
 		}
 
 

@@ -10,6 +10,9 @@ source ~/.local/share/omarchy/default/bash/rc
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 alias la='ls -la'
+eval "$(direnv hook bash)"
+export BROWSER=zen
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.local/share/odin:$PATH"
 
 . "$HOME/.local/share/../bin/env"
