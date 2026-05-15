@@ -51,6 +51,13 @@ window#waybar {
 	color: #d3869b;
 }
 
+
+#tray {
+	padding-left: 8px;
+	padding-right: 4px;
+	border-left: 2px solid #504945;
+
+}
 #workspaces button {
 	padding: 3px 6px;
 	background-color: transparent;
