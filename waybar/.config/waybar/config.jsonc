@@ -1,6 +1,6 @@
 {
   "position": "top",
-  "margin-top": 4,
+  "margin-top": 6,
 
   "modules-center": [
     "clock",
@@ -14,7 +14,7 @@
 
   "clock": {
     "format": "{:%I:%M %p, %b %d}",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "pulseaudio": {
