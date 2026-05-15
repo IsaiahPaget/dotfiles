@@ -3,7 +3,7 @@
 set -e
 
 # Create the# assuming you always name this file .dotfiles
-ROOT_DIR=~/.dotfiles/
+ROOT_DIR=~/.dotfiles
 
 mkdir -p ~/Downloads/
 DOWNLOADS_DIR=~/Downloads/
@@ -17,20 +17,19 @@ NC="\033[0m"
 echo -e "${GREEN}### Starting ###${NC}"
 
 ##
+# Preflight
+##
+
+source $ROOT_DIR/preflight.sh
+
+##
 # Optional Upgrade
 ##
 echo -e "${CYAN}### Do you want to update? ###${NC}"
 read -p "Confirm (y/n)?" CONT
 if [ "$CONT" = "y" ]; then
 	sudo pacman -Syu
-  yay -Syu
 fi
-
-##
-# Preflight
-##
-echo -e "${GREEN}### Preparing for takeoff ###${NC}"
-source ./preflight.sh
 
 ##
 # Install everything
