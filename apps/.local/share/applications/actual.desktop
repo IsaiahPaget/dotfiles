@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Actual
+Comment=Actual Budget
+Exec=helium-browser --app="https://actual.byteheadsoftware.com/"
+Terminal=false
+Type=Application
+Icon=/home/isaiah/.local/share/icons/actual-budget.png
+Categories=Finance;
+StartupWMClass=actual

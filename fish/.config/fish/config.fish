@@ -8,3 +8,6 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 direnv hook fish | source
 fnm env | source
+
+# opencode
+fish_add_path /home/isaiah/.opencode/bin
