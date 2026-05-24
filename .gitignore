@@ -1,3 +1,4 @@
 *.bak
 *.bak.*
 hypr/.config/hypr/shaders
+ssh/.ssh/known_hosts

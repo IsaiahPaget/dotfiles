@@ -1,6 +1,7 @@
 vim.cmd 'let g:netrw_liststyle = 3'
 
 local opt = vim.opt
+vim.cmd(":hi statusline guibg=NONE")
 vim.o.winborder = 'rounded'
 -- phat cursor
 opt.guicursor = ''

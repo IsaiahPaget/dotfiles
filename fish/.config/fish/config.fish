@@ -11,3 +11,7 @@ fnm env | source
 
 # opencode
 fish_add_path /home/isaiah/.opencode/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
