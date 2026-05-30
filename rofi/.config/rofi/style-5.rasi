@@ -22,8 +22,8 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "CaskaydiaCove Nerd Font Mono 12";
-    background:                  #000;
-    background-alt:              #0a0a0a;
+    background:                  #000000e6;
+    background-alt:              #0a0a0ae6;
     foreground:                  #ebdbb2;
     selected:                    #83a598;
     active:                      #b8bb26;

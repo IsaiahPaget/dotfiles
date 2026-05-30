@@ -16,14 +16,11 @@ window#waybar {
 }
 
 .modules-center {
-	background:
-		linear-gradient(#000000, #000000) padding-box,
-		linear-gradient(165deg, #504945, #282828) border-box;
-
-	border: 1px solid transparent;
-	border-radius: 24px;
-
-	padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.90);
+        /* linear-gradient(165deg, #504945, #282828) border-box; */
+    border: 1px solid #504945;
+    border-radius: 24px;
+    padding: 4px 8px;
 }
 
 #clock,
